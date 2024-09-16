@@ -1,6 +1,6 @@
 export const experience = [
   {
-    position: 'Front-end Developer',
+    position: 'Full Stack Developer',
     company: 'WAKACJE.PL',
     period: '01/2023 - present',
     responsibilities: [
@@ -12,7 +12,7 @@ export const experience = [
       'New employee onboarding',
       'Participating in meetings about application architecture',
     ],
-    technologies: ['React', 'TypeScript', 'Next', 'Prisma', 'Node', 'RTK', 'CI/CD', 'MobX', 'JavaScript'],
+    technologies: ['React', 'TypeScript', 'Next', 'Prisma', 'Node', 'RTK', 'MobX', 'JavaScript'],
   },
   {
     position: 'Front-end Developer',
@@ -29,7 +29,7 @@ export const experience = [
     technologies: ['React', 'TypeScript', 'Next', 'Tailwind', 'Zustand'],
   },
   {
-    position: 'Junior Frontend Developer',
+    position: 'Junior Front-end Developer',
     company: 'WAKACJE.PL',
     period: '08/2021 - 01/2023',
     responsibilities: [
@@ -39,6 +39,7 @@ export const experience = [
       'Supporting team',
       'Responding to failures and incidents',
     ],
+    technologies: ['Redux', 'HTML', 'CSS', 'MobX', 'JavaScript'],
   },
   {
     position: 'Sales Manager',
@@ -71,3 +72,12 @@ export const experience = [
     responsibilities: [],
   },
 ]
+
+export const PersonalData = {
+  name: 'Szymon Jackiewicz',
+  email: 'sz.jackiewicz@gmail.com',
+  phone: '+48 555 555 555',
+  address: 'Gdańsk, Poland',
+  birthday: '30/05/1988',
+  git: 'https://github.com/szymonjackiewicz',
+}

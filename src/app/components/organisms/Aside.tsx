@@ -6,7 +6,7 @@ export const Aside = () => {
   return (
     <aside
       data-element='Aside'
-      className='text-md w-full min-w-[375px] border-2 border-solid border-red-500 p-4 lg:w-1/2'
+      className='text-md w-full min-w-[375px] p-4 lg:w-1/2'
     >
       <section
         id='about'

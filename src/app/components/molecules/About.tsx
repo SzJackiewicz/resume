@@ -1,11 +1,12 @@
+import { PersonalData } from '@/app/content/content'
+import { PersonalDataContainer } from './PersonalDataContainer'
+
 export const About = () => {
   return (
     <div>
-      Szymon Jackiewicz
-      <br />
-      <span className='text-balance'>
-        <a href='https://github.com/szymonjackiewicz'>https://github.com/szymonjackiewicz</a>
-      </span>
+      <h1 className='text-xl font-bold tracking-wider text-sky-400'>{PersonalData.name}</h1>
+      <h2 className='text-base font-bold tracking-wider'>Full Stack Developer</h2>
+      <PersonalDataContainer />
     </div>
   )
 }
