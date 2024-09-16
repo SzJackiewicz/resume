@@ -2,7 +2,7 @@ export const Description = () => {
   return (
     <section
       data-element='Description'
-      className='text-base'
+      className='text-base text-slate-300'
     >
       Hi! Thank you for reviewing my CV! <br />
       My name is Szymon, and I&#39;ve been actively working on my professional growth as a Frontend Developer for more than 3 years. I never

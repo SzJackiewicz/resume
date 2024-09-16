@@ -11,10 +11,10 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        highContrast: '#e2e8f0'
+        highContrast: '#e2e8f0',
       },
       fontSize: {
-        'sm': 'clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem)',
+        'sm': 'clamp(0.8rem, 0.17vw + 0.86rem, 1.0rem)',
         'base': 'clamp(1rem, 0.34vw + 0.91rem, 1.19rem)',
         'lg': 'clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem)',
         'xl': 'clamp(1.56rem, 1vw + 1.31rem, 2.11rem)',

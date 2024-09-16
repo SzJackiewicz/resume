@@ -3,7 +3,10 @@ import { Header } from './components/organisms/Header'
 
 export default function Home() {
   return (
-    <main className='mx-auto flex min-h-screen max-w-screen-xl flex-wrap justify-center gap-4 border-2 border-solid border-red-500 px-8 lg:flex-nowrap lg:justify-between lg:px-0'>
+    <main
+      data-element='Main'
+      className='justify-centermin-w-[375px] mx-auto flex min-h-screen max-w-screen-xl flex-wrap gap-4 border-2 border-solid border-red-500 sm:px-8 lg:flex-nowrap lg:justify-between lg:px-0'
+    >
       <Header data-element='Header' />
       <Aside data-element='Aside' />
     </main>
