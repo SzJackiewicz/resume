@@ -1,6 +1,7 @@
 import { experience } from '@/app/content/content'
 import { Description } from '../molecules/Description'
 import { ExperienceCard } from '../molecules/ExperienceCard'
+import { PersonalDataContainer } from '../molecules/PersonalDataContainer'
 
 export const Aside = () => {
   return (
@@ -13,8 +14,12 @@ export const Aside = () => {
         className='mb-20'
       >
         <Description />
+        <PersonalDataContainer />
       </section>
-      <section id='experience'>
+      <section
+        id='experience'
+        className='mb-20'
+      >
         {experience &&
           experience.map((experience, index) => (
             <ExperienceCard
@@ -26,6 +31,12 @@ export const Aside = () => {
               technologies={experience.technologies}
             />
           ))}
+      </section>
+      <section
+        id='education'
+        className='mb-20 border-2 border-dashed border-sky-500'
+      >
+        EDUKACJA
       </section>
     </aside>
   )
