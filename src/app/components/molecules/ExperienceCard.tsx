@@ -12,7 +12,7 @@ export const ExperienceCard = ({ date, company, description, technologies, posit
   return (
     <div
       data-element='ExperienceCard'
-      className='my-8 w-full min-w-[370px] max-w-[675px] cursor-pointer gap-2 rounded-md p-4 hover:bg-slate-800/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg sm:my-4 sm:flex'
+      className='my-8 w-full min-w-[370px] max-w-[675px] cursor-pointer gap-2 rounded-md p-4 hover:bg-slate-700/25 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg sm:my-4 sm:flex'
     >
       <h3 className='mb-2 mt-1 pt-1 font-semibold uppercase tracking-wide text-sky-200 sm:w-1/4 sm:text-xs'>{date}</h3>
       <div className='flex w-full flex-col gap-2 sm:w-3/4'>

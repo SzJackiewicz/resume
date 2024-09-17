@@ -1,5 +1,3 @@
-'use client' // Add this line at the top
-
 import { experience } from '@/app/content/content'
 import { Description } from '../molecules/Description'
 import { ExperienceCard } from '../molecules/ExperienceCard'
