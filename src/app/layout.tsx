@@ -22,6 +22,8 @@ export default function RootLayout({
       <body
         className={`${inter.className} min-w-[375px] justify-center bg-slate-900 leading-relaxed text-slate-300 antialiased selection:bg-teal-300 selection:text-teal-900`}
       >
+        <div className='blob blur-[120px]' />
+        <div className='blob2 blur-[100px]' />
         {children}
       </body>
     </html>
