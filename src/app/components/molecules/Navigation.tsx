@@ -1,3 +1,4 @@
+import { scrollToSection } from '@/helpers/scrollToSection'
 import { cn } from '@/lib/cn'
 
 export const Navigation = ({ activeSection }: { activeSection: string }) => {
@@ -5,7 +6,11 @@ export const Navigation = ({ activeSection }: { activeSection: string }) => {
     <nav className='mt-12 py-4'>
       <ul className='flex flex-col gap-2 text-sm tracking-wide text-slate-400'>
         <li>
-          <a className='group flex cursor-pointer items-center gap-3'>
+          <a
+            onClick={scrollToSection('#about')}
+            href='#about'
+            className='group flex cursor-pointer items-center gap-3'
+          >
             <span
               className={cn(
                 'block h-[1px] w-12 border-[1px] border-solid border-slate-500 transition-all',
@@ -17,7 +22,11 @@ export const Navigation = ({ activeSection }: { activeSection: string }) => {
           </a>
         </li>
         <li>
-          <a className='group flex cursor-pointer items-center gap-3'>
+          <a
+            onClick={scrollToSection('#experience')}
+            href='#experience'
+            className='group flex cursor-pointer items-center gap-3'
+          >
             <span
               className={cn(
                 'block h-[1px] w-12 border-[1px] border-solid border-slate-500 transition-all',
@@ -29,7 +38,27 @@ export const Navigation = ({ activeSection }: { activeSection: string }) => {
           </a>
         </li>
         <li>
-          <a className='group flex cursor-pointer items-center gap-3'>
+          <a
+            onClick={scrollToSection('#courses')}
+            href='#courses'
+            className='group flex cursor-pointer items-center gap-3'
+          >
+            <span
+              className={cn(
+                'block h-[1px] w-12 border-[1px] border-solid border-slate-500 transition-all',
+                activeSection === 'courses' && 'w-16 border-slate-300',
+                'group-hover:w-16 group-hover:border-slate-300'
+              )}
+            ></span>
+            <span className={cn('group-hover:text-slate-100', activeSection === 'courses' && 'text-slate-100')}>Courses</span>
+          </a>
+        </li>
+        <li>
+          <a
+            onClick={scrollToSection('#education')}
+            href='#education'
+            className='group flex cursor-pointer items-center gap-3'
+          >
             <span
               className={cn(
                 'block h-[1px] w-12 border-[1px] border-solid border-slate-500 transition-all',

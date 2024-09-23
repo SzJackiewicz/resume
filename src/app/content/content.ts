@@ -17,7 +17,7 @@ export const experience = [
   {
     position: 'Front-end Developer',
     company: 'DeveloArt',
-    period: '11/2022 - present',
+    period: '11/2022 - 12/2023',
     responsibilities: [
       'Supporting interns',
       'Maintaining clean code in the application',
@@ -79,5 +79,38 @@ export const PersonalData = {
   phone: '+48 555 555 555',
   address: 'Gdańsk, Poland',
   birthday: '30/05/1988',
-  git: 'https://github.com/szymonjackiewicz',
+  git: 'https://github.com/SzJackiewicz',
+  linkedIn: 'https://www.linkedin.com/in/szymon-jackiewicz1988/',
 }
+
+export const educationData = [
+  {
+    company: 'University of Gdańsk',
+    period: '2010 - 2012',
+    position: 'History, II deg',
+  },
+  {
+    company: 'University of Szczecin, I deg',
+    period: '2007 - 2010',
+    position: 'History, I deg',
+  },
+  {
+    company: 'Hight School of Łobez',
+    period: '2004 - 2007',
+    position: 'Mathematics and Computer Science',
+  },
+]
+
+export const courseData = [
+  'Opanuj Frontend',
+  'CodersLab Bootcamp - Javascript, React, CSS, HTML5',
+  'CodersLab - ScrumLab',
+  'Transformation management',
+  'Team building',
+  'Lean Management',
+  'Manager ABC',
+  'Higher management culture',
+  'Transformational leader',
+  'Feedback',
+  'Advanced Excel',
+]

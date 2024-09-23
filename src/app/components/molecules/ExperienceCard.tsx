@@ -4,11 +4,11 @@ type ExperienceCardProps = {
   date: string
   position: string
   company: string
-  description?: string
+  responsibilities?: string[]
   technologies?: string[]
 }
 
-export const ExperienceCard = ({ date, company, description, technologies, position }: ExperienceCardProps) => {
+export const ExperienceCard = ({ date, company, responsibilities, technologies, position }: ExperienceCardProps) => {
   return (
     <div
       data-element='ExperienceCard'
@@ -21,15 +21,29 @@ export const ExperienceCard = ({ date, company, description, technologies, posit
           <span>&bull;</span>
           <span>{position}</span>
         </h3>
-        <p
-          data-element='ExperienceDescription'
-          className='text-sm text-slate-400 sm:w-full'
-        >
-          {description}
-        </p>
-        <div className='flex flex-wrap gap-2 pt-2'>
-          <Chips chips={technologies} />
-        </div>
+        {responsibilities && (
+          <div
+            data-element='ExperienceDescription'
+            className='text-sm text-slate-400 sm:w-full'
+          >
+            <ul>
+              {responsibilities.map((desc, index) => (
+                <li
+                  key={index}
+                  className='my-1 text-sm text-slate-400'
+                >
+                  <span className='text-slate-300'>&bull;</span>
+                  <span className='ml-1'>{desc}</span>{' '}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {technologies && (
+          <div className='flex flex-wrap gap-2 pt-2'>
+            <Chips chips={technologies} />
+          </div>
+        )}
       </div>
     </div>
   )

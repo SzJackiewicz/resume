@@ -1,7 +1,8 @@
-import { experience } from '@/app/content/content'
+import { educationData, experience } from '@/app/content/content'
 import { Description } from '../molecules/Description'
 import { ExperienceCard } from '../molecules/ExperienceCard'
 import { PersonalDataContainer } from '../molecules/PersonalDataContainer'
+import { EducationCard } from '../molecules/EducationCard'
 
 export const Aside = () => {
   return (
@@ -20,6 +21,7 @@ export const Aside = () => {
         id='experience'
         className='mb-20'
       >
+        <h1 className='font-bold tracking-widest text-slate-200'>EXPERIENCE</h1>
         {experience &&
           experience.map((experience, index) => (
             <ExperienceCard
@@ -27,16 +29,38 @@ export const Aside = () => {
               date={experience.period}
               company={experience.company}
               position={experience.position}
-              description='Build, style, and ship high-quality websites, design systems, mobile apps, and digital experiences for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more.'
+              responsibilities={experience.responsibilities}
               technologies={experience.technologies}
             />
           ))}
       </section>
       <section
-        id='education'
-        className='mb-20 border-2 border-dashed border-sky-500'
+        id='courses'
+        className='mb-20'
       >
-        EDUKACJA
+        <h1 className='font-bold tracking-widest text-slate-200'>COURSES</h1>
+        {educationData.map((education, index) => (
+          <EducationCard
+            key={index}
+            schoolName={education.company}
+            date={education.period}
+            studyField={education.position}
+          />
+        ))}
+      </section>
+      <section
+        id='education'
+        className='mb-20'
+      >
+        <h1 className='font-bold tracking-widest text-slate-200'>EDUCATION</h1>
+        {educationData.map((education, index) => (
+          <EducationCard
+            key={index}
+            schoolName={education.company}
+            date={education.period}
+            studyField={education.position}
+          />
+        ))}
       </section>
     </aside>
   )
