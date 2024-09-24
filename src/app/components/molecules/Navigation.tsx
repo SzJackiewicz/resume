@@ -3,7 +3,7 @@ import { cn } from '@/lib/cn'
 
 export const Navigation = ({ activeSection }: { activeSection: string }) => {
   return (
-    <nav className='mt-12 py-4'>
+    <nav className='invisible mt-12 hidden py-4 sm:visible sm:block'>
       <ul className='flex flex-col gap-2 text-sm tracking-wide text-slate-400'>
         <li>
           <a
