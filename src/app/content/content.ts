@@ -102,15 +102,13 @@ export const educationData = [
 ]
 
 export const courseData = [
+  'AI_devs',
   'Opanuj Frontend',
-  'CodersLab Bootcamp - Javascript, React, CSS, HTML5',
-  'CodersLab - ScrumLab',
-  'Transformation management',
-  'Team building',
+  'CodersLab Bootcamp',
+  'Scrum Lab',
   'Lean Management',
+  'Team building',
   'Manager ABC',
-  'Higher management culture',
-  'Transformational leader',
-  'Feedback',
   'Advanced Excel',
+  'Transformational leader',
 ]

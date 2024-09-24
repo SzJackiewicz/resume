@@ -1,10 +1,34 @@
-import { educationData, experience } from '@/app/content/content'
+import { educationData, experience, courseData } from '@/app/content/content'
 import { Description } from '../molecules/Description'
 import { ExperienceCard } from '../molecules/ExperienceCard'
 import { PersonalDataContainer } from '../molecules/PersonalDataContainer'
 import { EducationCard } from '../molecules/EducationCard'
+import { CourseCard } from '../molecules/CourseCard'
+import { useRef, useState, useLayoutEffect } from 'react'
+import { useIsVisible } from '@/helpers/useIsVisible'
 
 export const Aside = () => {
+  const refEducation = useRef<HTMLDivElement>(null)
+  const refCourses = useRef<HTMLDivElement>(null)
+
+  const isEducationVisible = useIsVisible(refEducation)
+  const isCoursesVisible = useIsVisible(refCourses)
+
+  const [hasEducationBeenVisible, setHasEducationBeenVisible] = useState(false)
+  const [hasCoursesBeenVisible, setHasCoursesBeenVisible] = useState(false)
+
+  useLayoutEffect(() => {
+    if (isEducationVisible && !hasEducationBeenVisible) {
+      setHasEducationBeenVisible(true)
+    }
+  }, [isEducationVisible, hasEducationBeenVisible])
+
+  useLayoutEffect(() => {
+    if (isCoursesVisible && !hasCoursesBeenVisible) {
+      setHasCoursesBeenVisible(true)
+    }
+  }, [isCoursesVisible, hasCoursesBeenVisible])
+
   return (
     <aside
       data-element='Aside'
@@ -35,22 +59,17 @@ export const Aside = () => {
           ))}
       </section>
       <section
+        ref={refCourses}
         id='courses'
-        className='mb-20'
+        className={`mb-20 transition-opacity duration-700 ease-in ${hasCoursesBeenVisible ? 'opacity-100' : 'opacity-0'}`}
       >
         <h1 className='font-bold tracking-widest text-slate-200'>COURSES</h1>
-        {educationData.map((education, index) => (
-          <EducationCard
-            key={index}
-            schoolName={education.company}
-            date={education.period}
-            studyField={education.position}
-          />
-        ))}
+        <CourseCard courseData={courseData} />
       </section>
       <section
+        ref={refEducation}
         id='education'
-        className='mb-20'
+        className={`mb-20 transition-opacity duration-700 ease-in ${hasEducationBeenVisible ? 'opacity-100' : 'opacity-0'}`}
       >
         <h1 className='font-bold tracking-widest text-slate-200'>EDUCATION</h1>
         {educationData.map((education, index) => (
