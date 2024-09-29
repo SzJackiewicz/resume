@@ -7,7 +7,7 @@ type EducationCardProps = {
 export const EducationCard = ({ date, schoolName, studyField }: EducationCardProps) => {
   return (
     <div
-      data-element='ExperienceCard'
+      data-element='EducationCard'
       className='hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.462)] my-1 w-full min-w-[370px] max-w-[675px] gap-2 rounded-md p-4 hover:bg-slate-700/25 hover:drop-shadow-lg sm:my-0 sm:flex'
     >
       <h3 className='mb-2 mt-1 pt-1 font-semibold uppercase tracking-wide text-sky-200 sm:w-1/4 sm:text-xs'>{date}</h3>

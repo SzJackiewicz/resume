@@ -6,8 +6,10 @@ import { EducationCard } from '../molecules/EducationCard'
 import { CourseCard } from '../molecules/CourseCard'
 import { useRef, useState, useLayoutEffect } from 'react'
 import { useIsVisible } from '@/helpers/useIsVisible'
+import { useStore } from '@/store/store'
 
 export const Aside = () => {
+  const { language } = useStore()
   const refEducation = useRef<HTMLDivElement>(null)
   const refCourses = useRef<HTMLDivElement>(null)
 
@@ -46,17 +48,16 @@ export const Aside = () => {
         className='mb-10 sm:mb-20'
       >
         <h1 className='font-bold tracking-widest text-slate-200'>EXPERIENCE</h1>
-        {experience &&
-          experience.map((experience, index) => (
-            <ExperienceCard
-              key={index}
-              date={experience.period}
-              company={experience.company}
-              position={experience.position}
-              responsibilities={experience.responsibilities}
-              technologies={experience.technologies}
-            />
-          ))}
+        {experience.map((experience, index) => (
+          <ExperienceCard
+            key={index}
+            date={experience.period}
+            company={experience.company}
+            position={experience.position}
+            responsibilities={experience.responsibilities}
+            technologies={experience.technologies}
+          />
+        ))}
       </section>
       <section
         ref={refCourses}
@@ -75,9 +76,9 @@ export const Aside = () => {
         {educationData.map((education, index) => (
           <EducationCard
             key={index}
-            schoolName={education.company}
+            schoolName={education.company[language]}
             date={education.period}
-            studyField={education.position}
+            studyField={education.position[language]}
           />
         ))}
       </section>

@@ -1,54 +1,59 @@
 import { PersonalData } from '@/app/content/content'
+import { useStore } from '@/store/store'
 
 export const PersonalDataContainer = () => {
+  const { language } = useStore()
+  const data = PersonalData.data
+  const labels = PersonalData[language]
+
   return (
     <ul className='text-balance pt-3 text-sm tracking-wide text-slate-300'>
-      {PersonalData.email && (
+      {data.email && (
         <li className='py-1 transition-all duration-500 ease-in-out hover:text-sky-400'>
-          <span className='mr-1 uppercase tracking-wider text-slate-400'>Email:</span> {PersonalData.email}
+          <span className='mr-1 uppercase tracking-wider text-slate-400'>{labels.email}:</span> {data.email}
         </li>
       )}
-      {PersonalData.phone && (
+      {data.phone && (
         <li className='py-1 transition-all duration-500 ease-in-out hover:text-sky-400'>
-          <span className='mr-1 uppercase tracking-wider text-slate-400'>Phone:</span>
-          {PersonalData.phone}
+          <span className='mr-1 uppercase tracking-wider text-slate-400'>{labels.phone}:</span>
+          {data.phone}
         </li>
       )}
-      {PersonalData.address && (
+      {data.address && (
         <li className='py-1 transition-all duration-500 ease-in-out hover:text-sky-400'>
-          <span className='mr-1 uppercase tracking-wider text-slate-400'>Address:</span>
-          {PersonalData.address}
+          <span className='mr-1 uppercase tracking-wider text-slate-400'>{labels.address}:</span>
+          {data.address}
         </li>
       )}
-      {PersonalData.birthday && (
+      {data.birthday && (
         <li className='py-1 transition-all duration-500 ease-in-out hover:text-sky-400'>
-          <span className='mr-1 uppercase tracking-wider text-slate-400'>Birthday:</span>
-          {PersonalData.birthday}
+          <span className='mr-1 uppercase tracking-wider text-slate-400'>{labels.birthday}:</span>
+          {data.birthday}
         </li>
       )}
-      {PersonalData.git && (
+      {data.git && (
         <li className='pointer py-1 transition-all duration-500 ease-in-out hover:text-sky-400'>
-          <span className='mr-1 uppercase tracking-wider text-slate-400'>GitHub:</span>
+          <span className='mr-1 uppercase tracking-wider text-slate-400'>{labels.git}:</span>
           <a
             target='_blank'
-            rel='noopener noreferrer' // Dodano atrybut rel
-            href={PersonalData.git} // Zmieniono na dynamiczny adres URL
+            rel='noopener noreferrer'
+            href={data.git}
             className='text-slate-300 hover:text-sky-400'
           >
-            {PersonalData.git}
+            {data.git}
           </a>
         </li>
       )}
-      {PersonalData.git && (
+      {data.linkedIn && (
         <li className='pointer py-1 transition-all duration-500 ease-in-out hover:text-sky-400'>
-          <span className='mr-1 uppercase tracking-wider text-slate-400'>LinkedIn:</span>
+          <span className='mr-1 uppercase tracking-wider text-slate-400'>{labels.linkedIn}:</span>
           <a
             target='_blank'
-            rel='noopener noreferrer' // Dodano atrybut rel
-            href={PersonalData.linkedIn} // Zmieniono na dynamiczny adres URL
+            rel='noopener noreferrer'
+            href={data.linkedIn}
             className='text-slate-300 hover:text-sky-400'
           >
-            {PersonalData.linkedIn}
+            {data.linkedIn}
           </a>
         </li>
       )}

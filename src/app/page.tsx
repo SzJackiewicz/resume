@@ -5,6 +5,7 @@ import { Header } from './components/organisms/Header'
 import { MainWrapper } from './components/template/MainWrapper'
 import { useLayoutEffect, useState, useEffect } from 'react'
 import { ArrowUpIcon } from './icons/ArrowUp'
+import { LangToggle } from './components/molecules/LangToggle'
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('')
@@ -49,6 +50,7 @@ export default function Home() {
 
   return (
     <main data-element='Main'>
+      <LangToggle />
       <MainWrapper>
         <Header activeSection={activeSection} />
         <Aside />
