@@ -36,14 +36,14 @@ export const Aside = () => {
     >
       <section
         id='about'
-        className='mb-20'
+        className='mb-10 sm:mb-20'
       >
         <Description />
         <PersonalDataContainer />
       </section>
       <section
         id='experience'
-        className='mb-20'
+        className='mb-10 sm:mb-20'
       >
         <h1 className='font-bold tracking-widest text-slate-200'>EXPERIENCE</h1>
         {experience &&
@@ -60,8 +60,8 @@ export const Aside = () => {
       </section>
       <section
         ref={refCourses}
-        id='courses'
-        className={`mb-20 transition-opacity duration-700 ease-in ${hasCoursesBeenVisible ? 'opacity-100' : 'opacity-0'}`}
+        id='education'
+        className={`mb-10 transition-opacity duration-700 ease-in sm:mb-20 ${hasCoursesBeenVisible ? 'opacity-100' : 'opacity-0'}`}
       >
         <h1 className='font-bold tracking-widest text-slate-200'>COURSES</h1>
         <CourseCard courseData={courseData} />

@@ -4,7 +4,7 @@ export const Testimonials = () => {
       data-element='Testimonials'
       className='tracking-wide text-slate-400'
     >
-      <span className='text-sm italic'>Site powered by</span> <span className='text-slate-400'>NEXT.js</span>
+      <span className='text-xs italic'>Site powered by</span> <span className='text-slate-400'>NEXT.js</span>
     </div>
   )
 }

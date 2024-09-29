@@ -4,7 +4,7 @@ export const experience = [
     company: 'WAKACJE.PL',
     period: '01/2023 - present',
     responsibilities: [
-      'Working on several applications, including the main website',
+      'Working on several applications, including the main service',
       'Conducting code review',
       'Coordinating road-map projects',
       'Supporting team',
@@ -19,6 +19,7 @@ export const experience = [
     company: 'DeveloArt',
     period: '11/2022 - 12/2023',
     responsibilities: [
+      'Casual/Unpaid Work',
       'Supporting interns',
       'Maintaining clean code in the application',
       'Tools selection',
@@ -76,7 +77,7 @@ export const experience = [
 export const PersonalData = {
   name: 'Szymon Jackiewicz',
   email: 'sz.jackiewicz@gmail.com',
-  phone: '+48 555 555 555',
+  phone: '+48 787 320 395',
   address: 'Gdańsk, Poland',
   birthday: '30/05/1988',
   git: 'https://github.com/SzJackiewicz',
