@@ -8,7 +8,7 @@ import { TypescriptIcon } from '@/app/icons/Typescript'
 
 export const IconsList = () => {
   return (
-    <section className='back mt-6 flex h-9 w-full gap-5 text-slate-200/20 grayscale'>
+    <section className='back mb-2 mt-6 flex h-9 w-full gap-5 text-slate-200/20 grayscale'>
       <div className='h-5 w-8 fill-white/15'>
         <CssIcon />
       </div>
