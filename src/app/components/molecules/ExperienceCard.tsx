@@ -1,17 +1,22 @@
 import { useRef, useState, useLayoutEffect } from 'react'
 import { useIsVisible } from '@/helpers/useIsVisible'
 import { Chips } from '../atoms/Chips'
+import { useStore } from '@/store/store'
 
 type ExperienceCardProps = {
   date: string
   position: string
   company: string
-  responsibilities?: string[]
+  responsibilities: {
+    PL: string[]
+    EN: string[]
+  }
   technologies?: string[]
 }
 
 export const ExperienceCard = ({ date, company, responsibilities, technologies, position }: ExperienceCardProps) => {
   const ref = useRef<HTMLDivElement>(null)
+  const { language } = useStore()
   const isVisible = useIsVisible(ref)
   const [hasBeenVisible, setHasBeenVisible] = useState(false)
 
@@ -40,7 +45,7 @@ export const ExperienceCard = ({ date, company, responsibilities, technologies, 
             className='text-sm text-slate-400 sm:w-full'
           >
             <ul>
-              {responsibilities.map((desc, index) => (
+              {responsibilities?.[language]?.map((desc, index) => (
                 <li
                   key={index}
                   className='my-1 text-sm text-slate-400'
