@@ -124,8 +124,8 @@ export const experience = [
 
 export const headerInfo = {
   PL: {
-    first: `Cześć! Dziękuję za przejrzenie mojego CV!`,
-    second: `Nazywam się Szymon i od ponad 3 lat aktywnie pracuję nad moim profesjonalnym rozwojem jako Frontend Developer. Nigdy nie
+    first: `Cześć! Dziękuję że przeglądasz moje CV!`,
+    second: `Mam na imię Szymon i od ponad 3 lat rozwijam się jako Frontend Developer. Nigdy nie
       wyobrażałem sobie, że po 10 latach pracy jako menedżer zespołu odkryję nową pasję, która całkowicie zmieni moją ścieżkę kariery`,
   },
   EN: {
