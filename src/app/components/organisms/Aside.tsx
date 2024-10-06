@@ -1,4 +1,4 @@
-import { educationData, experience, courseData } from '@/app/content/content'
+import { educationData, experience, courseData, ExperienceCardType } from '@/app/content/content'
 import { Description } from '../molecules/Description'
 import { ExperienceCard } from '../molecules/ExperienceCard'
 import { PersonalDataContainer } from '../molecules/PersonalDataContainer'
@@ -38,7 +38,7 @@ export const Aside = () => {
     >
       <section
         id='about'
-        className='mb-10 sm:mb-20'
+        className='mb-10'
       >
         <Description />
         <PersonalDataContainer />
@@ -47,7 +47,7 @@ export const Aside = () => {
         id='experience'
         className='mb-10 sm:mb-20'
       >
-        <h1 className='font-bold tracking-widest text-slate-200'>EXPERIENCE</h1>
+        <h1 className='font-bold tracking-widest text-slate-200'>{language === 'PL' ? 'DOŚWIADCZENIE' : 'EXPERIENCE'}</h1>
         {experience.map((experience, index) => (
           <ExperienceCard
             key={index}
@@ -56,6 +56,7 @@ export const Aside = () => {
             position={experience.position}
             responsibilities={experience.responsibilities}
             technologies={experience.technologies}
+            type={experience.type as ExperienceCardType}
           />
         ))}
       </section>
@@ -64,7 +65,7 @@ export const Aside = () => {
         id='education'
         className={`mb-10 transition-opacity duration-700 ease-in sm:mb-20 ${hasCoursesBeenVisible ? 'opacity-100' : 'opacity-0'}`}
       >
-        <h1 className='font-bold tracking-widest text-slate-200'>COURSES</h1>
+        <h1 className='font-bold tracking-widest text-slate-200'>{language === 'PL' ? 'KURSY' : 'COURSES'}</h1>
         <CourseCard courseData={courseData} />
       </section>
       <section
@@ -72,7 +73,7 @@ export const Aside = () => {
         id='education'
         className={`mb-20 transition-opacity duration-700 ease-in ${hasEducationBeenVisible ? 'opacity-100' : 'opacity-0'}`}
       >
-        <h1 className='font-bold tracking-widest text-slate-200'>EDUCATION</h1>
+        <h1 className='font-bold tracking-widest text-slate-200'>{language === 'PL' ? 'EDUKACJA' : 'EDUCATION'}</h1>
         {educationData.map((education, index) => (
           <EducationCard
             key={index}
