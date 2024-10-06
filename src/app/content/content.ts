@@ -1,8 +1,11 @@
+export type ExperienceCardType = 'accordion' | 'card'
+
 export const experience = [
   {
     position: 'Full Stack Developer',
     company: 'WAKACJE.PL',
-    period: '01/2023 - present',
+    period: '01/2023',
+    type: 'card' as ExperienceCardType,
     responsibilities: {
       PL: [
         'Praca nad kilkoma aplikacjami, w tym głównym serwisem',
@@ -30,7 +33,8 @@ export const experience = [
   {
     position: 'Front-end Developer',
     company: 'DeveloArt',
-    period: '11/2022 - 12/2023',
+    period: '11/2022 - 11/2023',
+    type: 'card',
     responsibilities: {
       PL: [
         'Praca dorywcza/nieodpłatna',
@@ -57,6 +61,7 @@ export const experience = [
     position: 'Junior Front-end Developer',
     company: 'WAKACJE.PL',
     period: '08/2021 - 01/2023',
+    type: 'card',
     responsibilities: {
       PL: [
         'Praca nad kilkoma aplikacjami, w tym głównym serwisem',
@@ -79,45 +84,80 @@ export const experience = [
     position: 'Sales Manager',
     company: 'Alior Bank',
     period: '09/2016 - 05/2021',
+    type: 'accordion',
     responsibilities: {
-      PL: [],
-      EN: [],
+      PL: [
+        'Zarządzanie zespołem',
+        'Rekrutacja',
+        'Prowadzenie szkoleń',
+        'Weryfikacja dokumentów kredytowych',
+        'Udzielanie informaji zwrotnej',
+        'Regularne raportowanie sprzedaży',
+      ],
+      EN: [
+        'Team management',
+        'Recruitment',
+        'Sales Training',
+        'Credit document verification',
+        'Providing feedback',
+        'Regular sales reporting',
+      ],
     },
   },
   {
     position: 'Manager',
     company: 'CCIG',
     period: '09/2014 - 09/2016',
+    type: 'accordion',
     responsibilities: {
-      PL: [],
-      EN: [],
+      PL: [
+        'Zarządzanie zespołem',
+        'Rekrutacja',
+        'Prowadzenie szkoleń',
+        'Negocjacje umów z kontrahentami',
+        'Zarządzanie projektem',
+        'Udzielanie informaji zwrotnej',
+        'Koordynowanie zespołów sprzedażowych oraz back-office',
+      ],
+      EN: [
+        'Team management',
+        'Recruitment',
+        'Sales Training',
+        'Negotiating contracts with clients',
+        'Project management',
+        'Providing feedback',
+        'Coordinating sales teams and back-office',
+      ],
     },
   },
   {
     position: 'Sales Manager',
     company: 'NorthTel',
     period: '09/2013 - 09/2014',
+    type: 'accordion',
     responsibilities: {
-      PL: [],
-      EN: [],
+      PL: ['Monitoring rozmów', 'Udzielanie informaji zwrotnej', 'Raportowanie sprzedaży', 'Prowadzenie szkoleń', 'Zarządzanie zespołem'],
+      EN: ['Call monitoring', 'Providing feedback', 'Sales reporting', 'Sales Training', 'Team management'],
     },
   },
   {
     position: 'Section Manager',
     company: 'Orange',
     period: '09/2011 - 09/2012',
+    type: 'accordion',
     responsibilities: {
-      PL: [],
-      EN: [],
+      PL: ['Monitoring rozmów', 'Udzielanie informaji zwrotnej', 'Rekrutacja', 'Prowadzenie szkoleń', 'Zarządzanie zespołem'],
+      EN: ['Call monitoring', 'Feedback', 'Recruitment', 'Sales Training', 'Team management'],
     },
   },
   {
     position: 'Telemarketer',
     company: 'Orange',
     period: '07/2010 - 09/2011',
+    type: 'accordion',
     responsibilities: {
-      PL: [],
-      EN: [],
+      PL: ['Pozyskanie nowych klientów', 'Dosprzedaż', 'Szkoenie nowych pracowników'],
+      EN: ['New customer acquisition', 'Cross-selling', 'New employee onboarding'],
     },
   },
 ]
@@ -126,12 +166,12 @@ export const headerInfo = {
   PL: {
     first: `Cześć! Dziękuję że przeglądasz moje CV!`,
     second: `Mam na imię Szymon i od ponad 3 lat rozwijam się jako Frontend Developer. Nigdy nie
-      wyobrażałem sobie, że po 10 latach pracy jako menedżer zespołu odkryję nową pasję, która całkowicie zmieni moją ścieżkę kariery`,
+      wyobrażałem sobie, że po 10 latach pracy jako menedżer zespołu odkryję nową pasję, która całkowicie zmieni moją ścieżkę kariery.`,
   },
   EN: {
     first: `Hi! Thank you for reviewing my CV!`,
     second: `My name is Szymon, and I have been actively working on my professional growth as a Frontend Developer for over 3 years. I never
-      imagined that after 10 years of working as a team manager, I would discover a new passion that would completely change my career path`,
+      imagined that after 10 years of working as a team manager, I would discover a new passion that would completely change my career path.`,
   },
 }
 
@@ -162,6 +202,7 @@ export const PersonalData = {
     birthday: 'wiek',
     git: 'git',
     linkedIn: 'linkedIn',
+    CV: 'CV',
   },
   EN: {
     name: 'name',
@@ -171,6 +212,7 @@ export const PersonalData = {
     birthday: 'birthday',
     git: 'git',
     linkedIn: 'linkedIn',
+    CV: 'CV',
   },
   data: {
     name: 'Szymon Jackiewicz',
@@ -180,6 +222,7 @@ export const PersonalData = {
     birthday: '30/05/1988',
     git: 'https://github.com/SzJackiewicz',
     linkedIn: 'https://www.linkedin.com/in/szymon-jackiewicz1988/',
+    CV: 'link do cv',
   },
 }
 

@@ -1,7 +1,10 @@
-import { useRef, useState, useLayoutEffect } from 'react'
 import { useIsVisible } from '@/helpers/useIsVisible'
 import { Chips } from '../atoms/Chips'
+import { useRef, useState, useLayoutEffect } from 'react'
 import { useStore } from '@/store/store'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { ExperienceCardType } from '@/app/content/content'
+import { cn } from '@/lib/cn'
 
 type ExperienceCardProps = {
   date: string
@@ -12,9 +15,10 @@ type ExperienceCardProps = {
     EN: string[]
   }
   technologies?: string[]
+  type: ExperienceCardType
 }
 
-export const ExperienceCard = ({ date, company, responsibilities, technologies, position }: ExperienceCardProps) => {
+export const ExperienceCard = ({ date, company, responsibilities, technologies, position, type }: ExperienceCardProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const { language } = useStore()
   const isVisible = useIsVisible(ref)
@@ -39,7 +43,7 @@ export const ExperienceCard = ({ date, company, responsibilities, technologies, 
           <span>&bull;</span>
           <span>{position}</span>
         </h3>
-        {responsibilities && (
+        {responsibilities && type === 'card' ? (
           <div
             data-element='ExperienceDescription'
             className='text-sm text-slate-400 sm:w-full'
@@ -56,6 +60,29 @@ export const ExperienceCard = ({ date, company, responsibilities, technologies, 
               ))}
             </ul>
           </div>
+        ) : (
+          <Accordion
+            type='single'
+            collapsible
+          >
+            <AccordionItem
+              value='item-1'
+              className={cn('border-none')}
+            >
+              <AccordionTrigger className={cn('text-[14px] text-slate-400')}>
+                {language === 'PL' ? 'Pokaż więcej' : 'Show more'}
+              </AccordionTrigger>
+              {responsibilities?.[language]?.map((desc, index) => (
+                <AccordionContent
+                  key={index}
+                  className='text-sm text-slate-400'
+                >
+                  <span className='text-slate-300'>&bull;</span>
+                  <span className='ml-1'>{desc}</span>{' '}
+                </AccordionContent>
+              ))}
+            </AccordionItem>
+          </Accordion>
         )}
         {technologies && (
           <div className='flex flex-wrap gap-2 pt-2'>

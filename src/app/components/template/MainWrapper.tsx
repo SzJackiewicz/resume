@@ -8,3 +8,4 @@ export const MainWrapper = ({ children }: { children: React.ReactNode }) => {
     </div>
   )
 }
+ 
