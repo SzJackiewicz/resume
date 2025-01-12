@@ -29,12 +29,11 @@ export default function Home() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log({ entry })
             setActiveSection(entry.target.id)
           }
         })
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     )
     const sections = document.querySelectorAll('section[id]')
     sections.forEach((section) => observer.observe(section))
