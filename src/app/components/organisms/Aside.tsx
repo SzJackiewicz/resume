@@ -7,6 +7,7 @@ import { CourseCard } from '../molecules/CourseCard'
 import { useRef, useState, useLayoutEffect } from 'react'
 import { useIsVisible } from '@/helpers/useIsVisible'
 import { useStore } from '@/store/store'
+import { SectionWithRef } from './SectionWithRef'
 
 export const Aside = () => {
   const { language } = useStore()
@@ -36,14 +37,14 @@ export const Aside = () => {
       data-element='Aside'
       className='text-md w-full min-w-[375px] p-4 lg:w-1/2'
     >
-      <section
+      <SectionWithRef
         id='about'
         className='mb-14'
       >
         <Description />
         <PersonalDataContainer />
-      </section>
-      <section
+      </SectionWithRef>
+      <SectionWithRef
         id='experience'
         className='mb-10 sm:mb-20'
       >
@@ -59,29 +60,31 @@ export const Aside = () => {
             type={experience.type as ExperienceCardType}
           />
         ))}
-      </section>
+      </SectionWithRef>
       <section
         ref={refCourses}
-        id='courses'
         className={`mb-10 transition-opacity duration-700 ease-in sm:mb-20 ${hasCoursesBeenVisible ? 'opacity-100' : 'opacity-0'}`}
       >
-        <h2 className='font-bold tracking-widest text-slate-200'>{language === 'PL' ? 'KURSY' : 'COURSES'}</h2>
-        <CourseCard courseData={courseData} />
+        <SectionWithRef id='courses'>
+          <h2 className='font-bold tracking-widest text-slate-200'>{language === 'PL' ? 'KURSY' : 'COURSES'}</h2>
+          <CourseCard courseData={courseData} />
+        </SectionWithRef>
       </section>
       <section
         ref={refEducation}
-        id='education'
         className={`mb-20 transition-opacity duration-700 ease-in ${hasEducationBeenVisible ? 'opacity-100' : 'opacity-0'}`}
       >
-        <h2 className='font-bold tracking-widest text-slate-200'>{language === 'PL' ? 'EDUKACJA' : 'EDUCATION'}</h2>
-        {educationData.map((education, index) => (
-          <EducationCard
-            key={index}
-            schoolName={education.company[language]}
-            date={education.period}
-            studyField={education.position[language]}
-          />
-        ))}
+        <SectionWithRef id='education'>
+          <h2 className='font-bold tracking-widest text-slate-200'>{language === 'PL' ? 'EDUKACJA' : 'EDUCATION'}</h2>
+          {educationData.map((education, index) => (
+            <EducationCard
+              key={index}
+              schoolName={education.company[language]}
+              date={education.period}
+              studyField={education.position[language]}
+            />
+          ))}
+        </SectionWithRef>
       </section>
     </aside>
   )

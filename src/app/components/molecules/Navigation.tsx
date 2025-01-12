@@ -3,8 +3,8 @@ import { scrollToSection } from '@/helpers/scrollToSection'
 import { cn } from '@/lib/cn'
 import { useStore } from '@/store/store'
 
-export const Navigation = ({ activeSection }: { activeSection: string }) => {
-  const { language } = useStore()
+export const Navigation = () => {
+  const { language, visibleSection: activeSection } = useStore()
 
   return (
     <nav className='invisible mt-12 hidden py-4 sm:visible sm:block'>

@@ -3,7 +3,7 @@ import { About } from '../molecules/About'
 import { Testimonials } from '../molecules/Testimonials'
 import { IconsList } from '../molecules/IconsList'
 
-export const Header = ({ activeSection }: { activeSection: string }) => {
+export const Header = () => {
   return (
     <header
       data-element='Header'
@@ -11,7 +11,7 @@ export const Header = ({ activeSection }: { activeSection: string }) => {
     >
       <About />
       <IconsList />
-      <Navigation activeSection={activeSection} />
+      <Navigation />
       <Testimonials />
     </header>
   )

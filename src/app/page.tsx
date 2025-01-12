@@ -3,12 +3,11 @@
 import { Aside } from './components/organisms/Aside'
 import { Header } from './components/organisms/Header'
 import { MainWrapper } from './components/template/MainWrapper'
-import { useLayoutEffect, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { ArrowUpIcon } from './icons/ArrowUp'
 import { LangToggle } from './components/molecules/LangToggle'
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState('')
   const [showScrollTop, setShowScrollTop] = useState(false)
 
   useEffect(() => {
@@ -24,26 +23,6 @@ export default function Home() {
     return () => window.removeEventListener('scroll', checkScrollTop)
   }, [showScrollTop])
 
-  useLayoutEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
-      },
-      { threshold: 0.2 }
-    )
-    const sections = document.querySelectorAll('section[id]')
-    sections.forEach((section) => observer.observe(section))
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section))
-      observer.disconnect()
-    }
-  }, [setActiveSection])
-
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -52,7 +31,7 @@ export default function Home() {
     <main data-element='Main'>
       <LangToggle />
       <MainWrapper>
-        <Header activeSection={activeSection} />
+        <Header />
         <Aside />
       </MainWrapper>
       {showScrollTop && (
