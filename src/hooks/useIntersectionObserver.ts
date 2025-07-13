@@ -28,7 +28,7 @@ export const useIntersectionObserver = ({ root = null, rootMargin = '0px', thres
         observer.unobserve(elementRef.current)
       }
     }
-  }, [elementRef, root, rootMargin, threshold])
+  }, [root, rootMargin, threshold])
 
   return [isVisible, elementRef] as const
 }
