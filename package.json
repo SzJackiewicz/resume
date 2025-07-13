@@ -30,7 +30,6 @@
     "@types/node": "^20",
     "@types/react": "19.0.5",
     "@types/react-dom": "19.0.3",
-    "eslint": "^8",
     "eslint-config-next": "15.1.4",
     "fluid-tailwind": "^1.0.3",
     "postcss": "^8",
